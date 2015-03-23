@@ -4,7 +4,7 @@
 #define   PIN_PULSE_LED       1
 #define   PIN_INTERRUPT       0
 
-volatile unsigned long  PULSE_TIME = 17000;
+volatile unsigned long PULSE_TIME = 17000;
 volatile boolean       _semaphore = false;
 volatile unsigned long _lastTime  = 0;
 
@@ -17,7 +17,7 @@ void setup()
   
   attachInterrupt(PIN_INTERRUPT,flankUp,RISING);  
 
-  pinMode(PIN_PULSE_LED,   OUTPUT);
+  pinMode(PIN_PULSE_LED,OUTPUT);
 } 
 
 
@@ -29,13 +29,9 @@ void loop()
     if(_semaphore)
       triggerPulse();
   }
-
 }
-
-
 void flankUp()
 {
-  
   if(!_semaphore)
     interruptAction();
 }
@@ -44,7 +40,6 @@ void interruptAction()
   noInterrupts();
   _lastTime = micros();
   setSemaphore(true);
-//  interrupts();
 }
 
 boolean pulseTimeOver()
@@ -61,9 +56,6 @@ void setSemaphore(boolean b)
 void triggerPulse()
 {
   noInterrupts();
-//  setLedState(_semaphore);
-//  delay(PULSE_TIME);
-// pulseOutput(PIN_PULSE_LED); 
   if(pulseTimeOver())
     setSemaphore(false);
   setLedState(_semaphore);
@@ -92,7 +84,6 @@ void triggerPulse()
 // }
 void pulseOutput(int l)
 {
-
   digitalWrite(l,1);
   delay(PULSE_TIME);
   digitalWrite(l,0);

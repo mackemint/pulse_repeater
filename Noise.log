@@ -1,0 +1,23 @@
+Circuit: * /Volumes/Mountain Lion/Users/mackemint/Documents/Projekt/Pulse_repeater/Pulse_repeater.asc
+
+WARNING: Less than two connections to node N006.  This node is used by A3.
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Mar 23 17:11:23 2015
+Total elapsed time: 0.221 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3622
+traniter = 3580
+tranpoints = 1610
+accept = 1356
+rejected = 254
+matrix size = 25
+fillins = 8
+solver = Normal
+Thread vector: 7.4/7.4[2] 4.7/3.9[2] 2.6/3.8[1] 0.2/2.6[1]  2592/500
+Matrix Compiler1: 1742 object code size  0.5/0.3/[0.1]
+Matrix Compiler2: off
+
